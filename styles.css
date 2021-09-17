@@ -1,0 +1,106 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    //overflow: auto;
+    background: E5E5E5;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    
+    
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: F3F7FA;
+    margin-left: 275px;
+    margin-right: 175px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 95%;
+    min-width: 0px;
+    max-width: 960px;
+    border: black 2px;
+}
+
+
+.header {
+    margin: 20px 20px 10px 20px;
+    padding: 10px 10px 0 10px;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    margin: 0 10px 10px 10px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    border:solid silver 1px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px silver;
+    padding: 10px;
+    background: FFFFFF;
+    position: relative;
+    height: 215px;
+}
+
+.content {
+    margin-left: 20px;
+}
+
+.transfer {
+    padding: 10px;
+}
+
+.tabs_btn {
+    padding: 15px;
+    width: 165px;
+    margin: 0;
+}
+
+.ticketcard {
+    display: flex;
+    flex-direction: column;
+    //gap: 20px;
+    width: 464px;
+    height: 144px;
+    border:solid silver 1px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px silver;
+    margin: 20px 0 20px 0;
+    padding: 20px;
+}
+
+.ticketcard_header {
+    display: flex;
+    justify-content: space-between;
+    height: 36px;
+}
+
+.tabs_add {
+    padding: 15px;
+    width: 502px;
+    margin: 0;
+}
+
+.content-string {
+    display: flex;
+    gap: 20px;
+    border: 1px solid silver;
+    height: 40px;
+    margin: 10px 0 20px 0;
+    justify-content: space-between;
+}
+
+.content-item {
+    border: 1px solid silver;
+}
+.content-item span * {
+    font-size: 12px;
+}
