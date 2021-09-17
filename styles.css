@@ -58,10 +58,16 @@ html, body {
     padding: 10px;
 }
 
+.tabs {
+    display: flex;
+    
+}
+
 .tabs_btn {
     padding: 15px;
-    width: 165px;
     margin: 0;
+    flex: 1;
+    border: 1px solid DFE5EC;
 }
 
 .ticketcard {
