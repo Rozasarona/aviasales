@@ -54,6 +54,7 @@ html, body {
 
 .transfer {
     padding: 10px;
+    cursor: url("./Cursor.png"), auto;
 }
 
 .transfer:hover {
@@ -118,6 +119,10 @@ html, body {
     padding: 15px;
     width: 502px;
     margin: 0;
+    background: #2196F3;
+    color: #FFFFFF;
+    border: 1px solid #2F80ED;
+    border-radius: 4px
 }
 
 .content-string {
@@ -144,3 +149,4 @@ html, body {
 .content-item span * {
     font-size: 12px;
 }
+
