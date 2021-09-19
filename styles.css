@@ -10,8 +10,6 @@ html, body {
 .wrapper {
     display: flex;
     justify-content: center;
-    
-    
     flex-direction: column;
     flex-wrap: wrap;
     background: F3F7FA;
@@ -25,17 +23,17 @@ html, body {
     border: black 2px;
 }
 
-
 .header {
     margin: 20px 20px 10px 20px;
     padding: 10px 10px 0 10px;
     text-align: center;
-}
+    }
 
 .main {
     display: flex;
     justify-content: center;
     margin: 0 10px 10px 10px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .sidebar {
@@ -47,7 +45,7 @@ html, body {
     padding: 10px;
     background: FFFFFF;
     position: relative;
-    height: 215px;
+    height: 220px;
 }
 
 .content {
@@ -58,22 +56,49 @@ html, body {
     padding: 10px;
 }
 
+.transfer:hover {
+    background: #F1FCFF;
+}
+
 .tabs {
     display: flex;
-    
+    font-family: 'Open Sans', sans-serif;
 }
 
 .tabs_btn {
     padding: 15px;
     margin: 0;
     flex: 1;
-    border: 1px solid DFE5EC;
+    border: 1px solid #2F80ED;
+    background: #FFFFFF;
+    color: #4A4A4A
+}
+
+.tabs_btn:first-child {
+    border-radius: 4px 0 0 4px;
+    border-right: 0;
+}
+
+.tabs_btn:last-child {
+    border-radius: 0 4px 4px 0;
+    border-left: 0;
+}
+
+.tabs_btn:focus {
+    background: #2196F3;
+    color: #FFFFFF;
+}
+
+.cost {
+    color: #2F80ED;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .ticketcard {
     display: flex;
     flex-direction: column;
-    //gap: 20px;
+
     width: 464px;
     height: 144px;
     border:solid silver 1px;
@@ -98,15 +123,24 @@ html, body {
 .content-string {
     display: flex;
     gap: 20px;
-    border: 1px solid silver;
     height: 40px;
     margin: 10px 0 20px 0;
     justify-content: space-between;
 }
 
 .content-item {
-    border: 1px solid silver;
+    width: 140px;
 }
+
+.content-item span:first-child {
+    color: #A0B0B9;
+}
+
+.content-item span:last-child {
+    color: #4A4A4A;
+    ;
+}
+
 .content-item span * {
     font-size: 12px;
 }
