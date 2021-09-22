@@ -4,7 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     //overflow: auto;
-    background: E5E5E5;
+    background: #E5E5E5;
 }
 
 .wrapper {
@@ -12,9 +12,9 @@ html, body {
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    background: F3F7FA;
+    background: #F3F7FA;
     margin-left: 275px;
-    margin-right: 175px;
+    margin-right: 275px;
     margin-top: 0px;
     margin-bottom: 0px;
     width: 95%;
@@ -43,7 +43,7 @@ html, body {
     border-radius: 4px;
     box-shadow: 0 0 5px silver;
     padding: 10px;
-    background: FFFFFF;
+    background: #FFFFFF;
     position: relative;
     height: 220px;
 }
@@ -72,7 +72,8 @@ html, body {
     flex: 1;
     border: 1px solid #2F80ED;
     background: #FFFFFF;
-    color: #4A4A4A
+    color: #4A4A4A;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .tabs_btn:first-child {
@@ -99,7 +100,7 @@ html, body {
 .ticketcard {
     display: flex;
     flex-direction: column;
-
+    background: #FFFFFF;
     width: 464px;
     height: 144px;
     border:solid silver 1px;
@@ -122,7 +123,8 @@ html, body {
     background: #2196F3;
     color: #FFFFFF;
     border: 1px solid #2F80ED;
-    border-radius: 4px
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .content-string {
@@ -150,3 +152,26 @@ html, body {
     font-size: 12px;
 }
 
+@media(min-width: 320px) and (max-width: 640px) {
+    /*html, body, .wrapper {
+        width: 100%;
+    }*/
+
+    .wrapper {
+        margin: 0;
+        width: 100%;
+    }
+
+    .main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        margin-bottom: 20px;
+        margin-right: 10px;
+    }
+
+    .ticketcard {
+        width: 100%;
+    }
+}
