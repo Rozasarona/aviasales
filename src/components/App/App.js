@@ -7,7 +7,7 @@ import { render } from '@testing-library/react';
 import Header from '../Header/Header';
 import SideBar from '../SideBar/SideBar';
 import Filters from '../Filters/Filters';
-import TicketsList from '../TicketsList';
+import TicketsList from '../TicketsList/TicketsList';
 import ShowTickets from '../ShowTickets/ShowTickets'
 
 

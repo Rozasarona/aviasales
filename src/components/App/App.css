@@ -7,6 +7,23 @@
   pointer-events: none;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background: #F3F7FA;
+  margin: 0 auto;
+  width: 960px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  align-items:flex-start;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

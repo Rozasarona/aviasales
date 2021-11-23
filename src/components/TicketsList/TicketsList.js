@@ -2,18 +2,18 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import TicketCard from '../TicketCard/TicketCard';
 
-function TicketList () {
+function TicketsList () {
 
-    render() {
-
-        return {
-            
-                <TicketCard />
-                <TicketCard />
-                <TicketCard />
-                <TicketCard />
-                <TicketCard />
-            }
+    return (
+        <>
+            <TicketCard />
+            <TicketCard />
+            <TicketCard />
+            <TicketCard />
+            <TicketCard />
+        </>
+    )
+    
 }
 
-export default TicketList; 
+export default TicketsList;

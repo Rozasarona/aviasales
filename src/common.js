@@ -1,0 +1,13 @@
+export const VisibilityFilters = {
+    SHOW_CHEAP: 'SHOW_CHEAP',
+    SHOW_FAST: 'SHOW_FAST',
+    SHOW_OPTIMAL: 'SHOW_OPTIMAL',
+}
+
+export const TransfersQuantities = {
+    SHOW_ALL: 'ALL',
+    WITHOUT_TRANSFERS: 'WITHOUT_TRANSFERS',
+    ONE_TRANSFER: 'ONE_TRANSFER',
+    TWO_TRANSFERS: 'TWO_TRANSFERS',
+    THREE_TRANSFERS: 'THREE_TRANSFERS',
+}
