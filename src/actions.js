@@ -1,3 +1,15 @@
-export const SET_VISIBILITY_FILTER = () => ({ type: 'SET_VISIBILITY_FILTER' });
+export const setVisibilityFilter = (filterValue) => ({
+    type: 'SET_VISIBILITY_FILTER',
+    payload: filterValue,
+});
 
-export const SET_QUANTITY_OF_TRANSFERS = () => ({ type: 'SET_QUANTITY_OF_TRANSFERS' });
+export const addTransferQuantity = (transferQuantityValue) => ({
+    type: 'ADD_TRANSFER_QUANTITY',
+    payload: transferQuantityValue,
+});
+
+
+export const removeTransferQuantities = (transferQuantityValue) => ({
+    type: 'REMOVE_TRANSFER_QUANTITY',
+    payload: transferQuantityValue,
+});

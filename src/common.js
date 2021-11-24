@@ -5,7 +5,7 @@ export const VisibilityFilters = {
 }
 
 export const TransfersQuantities = {
-    SHOW_ALL: 'ALL',
+    SHOW_ALL: 'SHOW_ALL',
     WITHOUT_TRANSFERS: 'WITHOUT_TRANSFERS',
     ONE_TRANSFER: 'ONE_TRANSFER',
     TWO_TRANSFERS: 'TWO_TRANSFERS',

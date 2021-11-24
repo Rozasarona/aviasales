@@ -5,7 +5,7 @@ import App from './components/App/App';
 import './index.css'
 import { bindActionCreators } from 'redux';
 import reducer from './reducer';
-import { } from './actions';
+import { Provider } from 'react-redux';
 
 
 
@@ -13,7 +13,11 @@ import { } from './actions';
 const store = createStore(reducer);
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store = {store}>
+        <App />
+    </Provider>, document.getElementById('root'));
+    
 
 
 

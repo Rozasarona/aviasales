@@ -5,8 +5,8 @@ import './SideBar.css';
 function SideBar() {
 
     return(
-        <sidebar className="sidebar">
-                    <div class="sidebar_header">
+        <div className="sidebar">
+                    <div className="sidebar_header">
                         КОЛИЧЕСТВО ПЕРЕСАДОК
                     </div>
                     <div className="transfer">
@@ -24,7 +24,7 @@ function SideBar() {
                     <div className="transfer">
                         <input type="checkbox" />3 пересадки
                     </div>
-                </sidebar>
+                </div>
     )
 }
 

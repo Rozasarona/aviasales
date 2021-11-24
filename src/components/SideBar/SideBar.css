@@ -26,27 +26,5 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-.tabs_btn {
-    padding: 15px;
-    margin: 0;
-    flex: 1;
-    border: 1px solid #2F80ED;
-    background: #FFFFFF;
-    color: #4A4A4A;
-    font-family: 'Open Sans', sans-serif;
-}
 
-.tabs_btn:first-child {
-    border-radius: 4px 0 0 4px;
-    border-right: 0;
-}
 
-.tabs_btn:last-child {
-    border-radius: 0 4px 4px 0;
-    border-left: 0;
-}
-
-.tabs_btn:focus {
-    background: #2196F3;
-    color: #FFFFFF;
-}

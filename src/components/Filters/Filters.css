@@ -23,7 +23,7 @@
     border-left: 0;
 }
 
-.tabs_btn:focus {
+.tabs_btn.current {
     background: #2196F3;
     color: #FFFFFF;
 }
