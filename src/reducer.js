@@ -1,14 +1,14 @@
-import { VisibilityFilters, TransfersQuantities } from "./common";
+import { VisibilityFilters } from "./common";
 
 
 const initialState = {
-    VisibilityFilter: VisibilityFilters.SHOW_ALL,
-    TransfersQuantities: {
+    visibilityFilter: VisibilityFilters.SHOW_ALL,
+    transfersQuantities: {
         SHOW_ALL: true,
-        WITHOUT_TRANSFERS: false,
-        ONE_TRANSFER: false,
-        TWO_TRANSFERS: false,
-        THREE_TRANSFERS: false,
+        WITHOUT_TRANSFERS: true,
+        ONE_TRANSFER: true,
+        TWO_TRANSFERS: true,
+        THREE_TRANSFERS: true,
     },
     tickets: [],
 }
@@ -16,31 +16,29 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case 'SET_VISIBILITY_FILTER':
-            //return Object.assign({}, state, {VisibilityFilters: action.payload});
-
             return {
                 ...state,
-                VisibilityFilters: action.payload,
+                visibilityFilters: action.payload,
             }
 
         case 'ADD_TRANSFER_QUANTITY':
             const transfersQuantities = {
-                ...state.TransfersQuantities,
+                ...state.transfersQuantities,
             }
             transfersQuantities[action.payload] = true;
             return {
                 ...state,
-                TransfersQuantities: transfersQuantities,
+                transfersQuantities: transfersQuantities,
             }
 
         case 'REMOVE_TRANSFER_QUANTITY':
             const transfersQuantities1 = {
-                ...state.TransfersQuantities,
+                ...state.transfersQuantities,
             }
             transfersQuantities1[action.payload] = false;
             return {
                 ...state,
-                TransfersQuantities: transfersQuantities1,
+                transfersQuantities: transfersQuantities1,
             }
 
         default:
