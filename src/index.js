@@ -6,6 +6,7 @@ import './index.css'
 import { bindActionCreators } from 'redux';
 import reducer from './reducer';
 import { Provider } from 'react-redux';
+import { getSearchId } from './Api';
 
 
 
@@ -17,8 +18,8 @@ ReactDOM.render(
     <Provider store = {store}>
         <App />
     </Provider>, document.getElementById('root'));
-    
 
+getSearchId().then(searchId => alert(searchId));
 
 
 
