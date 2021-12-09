@@ -2,18 +2,13 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import TicketCard from '../TicketCard/TicketCard';
 
-function TicketsList () {
+function TicketsList ({ tickets }) {
 
     return (
         <>
-            <TicketCard />
-            <TicketCard />
-            <TicketCard />
-            <TicketCard />
-            <TicketCard />
+            {tickets.map((ticket, index) => (<TicketCard ticket={ticket} key={index} />))}
         </>
     )
-    
 }
 
 export default TicketsList;

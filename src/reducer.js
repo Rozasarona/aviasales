@@ -1,4 +1,5 @@
 import { VisibilityFilters } from "./common";
+import * as actions from './actions';
 
 
 const initialState = {
@@ -10,18 +11,20 @@ const initialState = {
         TWO_TRANSFERS: true,
         THREE_TRANSFERS: true,
     },
+    searchId: null,
+    loadingCompleted: false,
     tickets: [],
 }
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case 'SET_VISIBILITY_FILTER':
+        case actions.SET_VISIBILITY_FILTER:
             return {
                 ...state,
-                visibilityFilters: action.payload,
+                visibilityFilter: action.payload,
             }
 
-        case 'ADD_TRANSFER_QUANTITY':
+        case actions.ADD_TRANSFER_QUANTITY:
             const transfersQuantities = {
                 ...state.transfersQuantities,
             }
@@ -31,7 +34,7 @@ const reducer = (state = initialState, action) => {
                 transfersQuantities: transfersQuantities,
             }
 
-        case 'REMOVE_TRANSFER_QUANTITY':
+        case actions.REMOVE_TRANSFER_QUANTITY:
             const transfersQuantities1 = {
                 ...state.transfersQuantities,
             }
@@ -39,6 +42,22 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 transfersQuantities: transfersQuantities1,
+            }
+
+        case actions.SET_SEARCH_ID:
+            return {
+                ...state,
+                searchId: action.payload
+            };
+        case actions.APPEND_TICKETS:
+            return {
+                ...state,
+                tickets: [ ...state.tickets, ...action.payload ]
+            }
+        case actions.SET_LOADING_STATE:
+            return {
+                ...state,
+                loadingCompleted: action.payload.loadingCompleted
             }
 
         default:

@@ -1,48 +1,54 @@
 import React from 'react';
 import './TicketCard.css'
 
+function renderSegment(segment, index) {
+    let stopsCount = `${segment.stops.length}`;
+    switch (segment.stops.length % 10) {
+        case 1:
+            stopsCount += ' пересадка';
+            break;
+        case 2:
+        case 3:
+        case 4:
+            stopsCount += ' пересадки';
+            break;
+        default:
+            stopsCount += ' пересадок';
+    }
+    const startOn = new Date(segment.date);
+    const finishOn = new Date(segment.date);
+    finishOn.setMinutes(finishOn.getMinutes() + segment.duration);
+    const durationMinutes = segment.duration % 60;
+    const durationHours = (segment.duration - durationMinutes) / 60;
+    return (<div className="content-string" key={index}>
+        <div className="content-item">
+            <span>{segment.origin} - {segment.destination}</span><br />
+            <span>{startOn.getHours()}:{startOn.getMinutes()} - {finishOn.getHours()}:{finishOn.getMinutes()}</span>
+        </div>
+        <div className="content-item">
+            <span>в пути</span><br />
+            <span>{durationHours}ч {durationMinutes}м</span>
+        </div>
+        <div className="content-item">
+            <span>{stopsCount}</span><br />
+            <span>{segment.stops.join(', ')}</span>
+        </div>
+    </div>);
+}
 
-function TicketCard() {
-
+function TicketCard({ ticket }) {
+    const logoUrl = `https://pics.avs.io/99/36/${ ticket.carrier }.png`;
     return (
         <div className="ticketcard">
             <div className="ticketcard_header">
-                <div className="cost">13400 Р</div>
-                <img src="https://pics.avs.io/99/36/ZM.png" />
+                <div className="cost">{ ticket.price } Р</div>
+                <img src={ logoUrl } alt="" />
             </div>
             <div className="ticketcard_content">
-                <div className="content-string">
-                    <div className="content-item">
-                        <span>mow - hkt</span><br />
-                        <span>10:45 - 8:00</span>
-                    </div>
-                    <div className="content-item">
-                        <span>в пути</span><br />
-                        <span>21ч 15м</span>
-                    </div>
-                    <div className="content-item">
-                        <span>2 пересадки</span><br />
-                        <span>HKG,JNB</span>
-                    </div>
-                </div>
-                <div className="content-string">
-                    <div className="content-item">
-                        <span>mow - hkt</span><br />
-                        <span>11:20 - 00:50</span>
-                    </div>
-                    <div className="content-item">
-                        <span>в пути</span><br />
-                        <span>13ч 30м</span>
-                    </div>
-                    <div className="content-item">
-                        <span>1 пересадка</span><br />
-                        <span>HKG</span>
-                    </div>
-                </div>
+                {ticket.segments.map((segment, index) => renderSegment(segment, index))}
             </div>
         </div>
     );
 }
-
 
 export default TicketCard;

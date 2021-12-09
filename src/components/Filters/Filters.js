@@ -4,20 +4,20 @@ import './Filters.css';
 import { setVisibilityFilter } from '../../actions';
 import { connect } from 'react-redux';
 
-function Filters({visibilityFilters, setVisibilityFilter}) {
+function Filters({visibilityFilter, setVisibilityFilter}) {
     const onButtonClick = filterValue => () => setVisibilityFilter(filterValue);
     return (
         <div className="tabs">
-            <button onClick={onButtonClick(VisibilityFilters.SHOW_CHEAP)} className={`tabs_btn ${visibilityFilters === VisibilityFilters.SHOW_CHEAP ? "current" : ""}`}>САМЫЙ ДЕШЕВЫЙ</button>
-            <button onClick={onButtonClick(VisibilityFilters.SHOW_FAST)} className={`tabs_btn ${visibilityFilters === VisibilityFilters.SHOW_FAST ? "current" : ""}`}>САМЫЙ БЫСТРЫЙ</button>
-            <button onClick={onButtonClick(VisibilityFilters.SHOW_OPTIMAL)} className={`tabs_btn ${visibilityFilters === VisibilityFilters.SHOW_OPTIMAL ? "current" : ""}`}>ОПТИМАЛЬНЫЙ</button>
+            <button onClick={onButtonClick(VisibilityFilters.SHOW_CHEAP)} className={`tabs_btn ${visibilityFilter === VisibilityFilters.SHOW_CHEAP ? "current" : ""}`}>САМЫЙ ДЕШЕВЫЙ</button>
+            <button onClick={onButtonClick(VisibilityFilters.SHOW_FAST)} className={`tabs_btn ${visibilityFilter === VisibilityFilters.SHOW_FAST ? "current" : ""}`}>САМЫЙ БЫСТРЫЙ</button>
+            <button onClick={onButtonClick(VisibilityFilters.SHOW_OPTIMAL)} className={`tabs_btn ${visibilityFilter === VisibilityFilters.SHOW_OPTIMAL ? "current" : ""}`}>ОПТИМАЛЬНЫЙ</button>
         </div>
     )
 }
 
 const mapStateToProps = state => {
     return {
-        visibilityFilters: state.visibilityFilters
+        visibilityFilter: state.visibilityFilter
     }
 }
 
