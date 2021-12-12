@@ -6,24 +6,29 @@ export const REMOVE_TRANSFER_QUANTITY = 'REMOVE_TRANSFER_QUANTITY';
 export const SET_SEARCH_ID = 'SET_SEARCH_ID';
 export const APPEND_TICKETS = 'APPEND_TICKETS';
 export const SET_LOADING_STATE = 'SET_LOADING_STATE';
+export const ADD_TICKETS = 'ADD_TICKETS';
+
+export const addTickets = () => ({
+    type: ADD_TICKETS
+});
 
 export const setVisibilityFilter = (filterValue) => ({
-    type: 'SET_VISIBILITY_FILTER',
-    payload: filterValue,
+    type: SET_VISIBILITY_FILTER,
+    payload: filterValue
 });
 
 export const addTransferQuantity = (transferQuantityValue) => ({
-    type: 'ADD_TRANSFER_QUANTITY',
-    payload: transferQuantityValue,
+    type: ADD_TRANSFER_QUANTITY,
+    payload: transferQuantityValue
 });
 
 
 export const removeTransferQuantities = (transferQuantityValue) => ({
-    type: 'REMOVE_TRANSFER_QUANTITY',
+    type: REMOVE_TRANSFER_QUANTITY,
     payload: transferQuantityValue,
 });
 
-export const setSearchId = searchId => ({
+export const setSearchId = (searchId) => ({
     type: SET_SEARCH_ID,
     payload: searchId
 });
