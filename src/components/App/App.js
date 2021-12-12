@@ -8,7 +8,7 @@ import Header from '../Header/Header';
 import SideBar from '../SideBar/SideBar';
 import Filters from '../Filters/Filters';
 import TicketsList from '../TicketsList/TicketsList';
-import ShowTickets from '../ShowTickets/ShowTickets'
+
 import { filterTickets, sortTickets } from '../../common';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
@@ -32,7 +32,6 @@ class App extends Component {
                     <div className="content">
                         <Filters />
                         <TicketsList tickets={sortedTickets.slice(0, 5)} />
-                        <ShowTickets />
                     </div>
                 </main>
             </div>

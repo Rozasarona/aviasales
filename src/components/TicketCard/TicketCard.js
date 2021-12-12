@@ -42,7 +42,7 @@ function TicketCard({ ticket }) {
         <div className="ticketcard">
             <div className="ticketcard_header">
                 <div className="cost">{ ticket.price } Р</div>
-                <img src={ logoUrl } alt="" />
+                <img src={ logoUrl } alt="MyLogo" />
             </div>
             <div className="ticketcard_content">
                 {ticket.segments.map((segment, index) => renderSegment(segment, index))}
