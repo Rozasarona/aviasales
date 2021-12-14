@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { applyMiddleware } from 'redux';
 import './App.css';
-import TicketCard from '../TicketCard/TicketCard';
-import { render } from '@testing-library/react';
 
 import Header from '../Header/Header';
 import SideBar from '../SideBar/SideBar';
