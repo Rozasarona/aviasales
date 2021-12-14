@@ -7,6 +7,7 @@ import Filters from '../Filters/Filters';
 import TicketsList from '../TicketsList/TicketsList';
 
 import { filterTickets, sortTickets } from '../../common';
+import Loader from '../Loader/Loader';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
@@ -17,7 +18,7 @@ class App extends Component {
     }
 
     render() {
-        const { tickets, transfersQuantities, visibilityFilter } = this.props;
+        const { tickets, transfersQuantities, visibilityFilter, loadingCompleted } = this.props;
         const filteredTickets = filterTickets(tickets, transfersQuantities);
         const sortedTickets = sortTickets(filteredTickets, visibilityFilter);
 
@@ -28,7 +29,8 @@ class App extends Component {
                     <SideBar />
                     <div className="content">
                         <Filters />
-                        <TicketsList tickets={sortedTickets.slice(0, 5)} />
+                        <Loader visible = { !loadingCompleted } />
+                        <TicketsList tickets={sortedTickets} />
                     </div>
                 </main>
             </div>
