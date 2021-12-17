@@ -30,7 +30,7 @@ class App extends Component {
                     <div className="content">
                         <Filters />
                         <Loader visible = { !loadingCompleted } />
-                        <TicketsList tickets={sortedTickets} />
+                        <TicketsList tickets={sortedTickets.slice(0,5)} />
                     </div>
                 </main>
             </div>
