@@ -16,11 +16,18 @@ export const filterTickets = (tickets, transfersQuantities) => {
     if (transfersQuantities.SHOW_ALL) {
         return tickets;
     } else {
+        const transfers = {
+            WITHOUT_TRANSFERS: 0,
+            ONE_TRANSFER: 1,
+            TWO_TRANSFERS: 2,
+            THREE_TRANSFERS: 3
+        };
         const transfersToSearchFor = new Set();
-        if (transfersQuantities.WITHOUT_TRANSFERS) transfersToSearchFor.add(0);
-        if (transfersQuantities.ONE_TRANSFER) transfersToSearchFor.add(1);
-        if (transfersQuantities.TWO_TRANSFERS) transfersToSearchFor.add(2);
-        if (transfersQuantities.THREE_TRANSFERS) transfersToSearchFor.add(3);
+        Object.keys(transfersQuantities).forEach(x => {
+            if(transfersQuantities[x]){
+                transfersToSearchFor.add(transfers[x]);
+            }
+        });
         return tickets.filter(
             ticket => ticket.segments.some(
                 segment => transfersToSearchFor.has(segment.stops.length)
