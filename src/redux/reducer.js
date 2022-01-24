@@ -1,4 +1,4 @@
-import { VisibilityFilters } from "./common";
+import { VisibilityFilters } from "../utils";
 import * as actions from './actions';
 
 

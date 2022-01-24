@@ -1,4 +1,4 @@
-import * as apiClient from './api-client/index';
+import * as apiClient from '../api-client/index';
 
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 export const ADD_TRANSFER_QUANTITY = 'ADD_TRANSFER_QUANTITY';

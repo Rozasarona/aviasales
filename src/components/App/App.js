@@ -6,10 +6,10 @@ import SideBar from '../SideBar/SideBar';
 import Filters from '../Filters/Filters';
 import TicketsList from '../TicketsList/TicketsList';
 
-import { filterTickets, sortTickets } from '../../common';
+import { filterTickets, sortTickets } from '../../utils';
 import Loader from '../Loader/Loader';
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import * as actions from '../../redux/actions';
 
 
 class App extends Component {

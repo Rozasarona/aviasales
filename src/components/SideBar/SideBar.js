@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addTransferQuantity, removeTransferQuantities } from '../../actions';
-import { TransfersQuantities } from '../../common';
+import { addTransferQuantity, removeTransferQuantities } from '../../redux/actions';
+import { TransfersQuantities } from '../../utils';
 import './SideBar.css';
 
 function SideBar({ transfersQuantities, addTransferQuantity, removeTransferQuantities }) {
@@ -34,19 +34,29 @@ function SideBar({ transfersQuantities, addTransferQuantity, removeTransferQuant
                         КОЛИЧЕСТВО ПЕРЕСАДОК
                     </div>
                     <div className="transfer">
-                        <input type="checkbox" checked={transfersQuantities.SHOW_ALL} onChange={onCheckboxChange(TransfersQuantities.SHOW_ALL)} />Все
+                        <label>
+                            <input type="checkbox" checked={transfersQuantities.SHOW_ALL} onChange={onCheckboxChange(TransfersQuantities.SHOW_ALL)} />Все
+                        </label>
                     </div>
                     <div className="transfer">
-                        <input type="checkbox" checked={transfersQuantities.WITHOUT_TRANSFERS} onChange={onCheckboxChange(TransfersQuantities.WITHOUT_TRANSFERS)} />Без пересадок
+                        <label>
+                            <input type="checkbox" checked={transfersQuantities.WITHOUT_TRANSFERS} onChange={onCheckboxChange(TransfersQuantities.WITHOUT_TRANSFERS)} />Без пересадок
+                        </label>
                     </div>
                     <div className="transfer">
-                        <input type="checkbox" checked={transfersQuantities.ONE_TRANSFER} onChange={onCheckboxChange(TransfersQuantities.ONE_TRANSFER)} />1 пересадка
+                        <label>
+                            <input type="checkbox" checked={transfersQuantities.ONE_TRANSFER} onChange={onCheckboxChange(TransfersQuantities.ONE_TRANSFER)} />1 пересадка
+                        </label>
                     </div>
                     <div className="transfer">
-                        <input type="checkbox" checked={transfersQuantities.TWO_TRANSFERS} onChange={onCheckboxChange(TransfersQuantities.TWO_TRANSFERS)} />2 пересадки
+                        <label>
+                            <input type="checkbox" checked={transfersQuantities.TWO_TRANSFERS} onChange={onCheckboxChange(TransfersQuantities.TWO_TRANSFERS)} />2 пересадки
+                        </label>
                     </div>
                     <div className="transfer">
-                        <input type="checkbox" checked={transfersQuantities.THREE_TRANSFERS} onChange={onCheckboxChange(TransfersQuantities.THREE_TRANSFERS)} />3 пересадки
+                        <label>
+                            <input type="checkbox" checked={transfersQuantities.THREE_TRANSFERS} onChange={onCheckboxChange(TransfersQuantities.THREE_TRANSFERS)} />3 пересадки
+                        </label>
                     </div>
                 </div>
     )

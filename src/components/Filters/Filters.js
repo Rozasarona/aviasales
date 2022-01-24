@@ -1,7 +1,7 @@
 import React from 'react';
-import  { VisibilityFilters } from '../../common';
+import  { VisibilityFilters } from '../../utils';
 import './Filters.css';
-import { setVisibilityFilter } from '../../actions';
+import { setVisibilityFilter } from '../../redux/actions';
 import { connect } from 'react-redux';
 
 function Filters({visibilityFilter, setVisibilityFilter}) {

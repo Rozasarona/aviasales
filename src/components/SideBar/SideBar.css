@@ -14,7 +14,7 @@
 
 .transfer {
     padding: 10px;
-    cursor: url("./Cursor.png"), auto;
+    cursor: pointer;
 }
 
 .transfer:hover {
