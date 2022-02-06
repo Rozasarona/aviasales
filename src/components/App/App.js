@@ -6,19 +6,10 @@ import SideBar from '../SideBar/SideBar';
 import Filters from '../Filters/Filters';
 import TicketsList from '../TicketsList/TicketsList';
 
-import Loader from '../Loader/Loader';
-import { connect } from 'react-redux';
-import * as actions from '../../redux/actions';
-
-
 class App extends Component {
-    async componentDidMount() {
-        await this.props.dispatch(actions.obtainTickets());
-    }
 
     render() {
-        const { tickets, transfersQuantities, visibilityFilter, loadingCompleted } = this.props;
-
+        
         return(
             <div className="wrapper">
                 <Header />
@@ -26,8 +17,7 @@ class App extends Component {
                     <SideBar />
                     <div className="content">
                         <Filters />
-                        <Loader visible = { !loadingCompleted } />
-                        <TicketsList tickets={tickets} transfersQuantities={transfersQuantities} visibilityFilter={visibilityFilter} />
+                        <TicketsList />
                     </div>
                 </main>
             </div>
@@ -35,6 +25,4 @@ class App extends Component {
     }
 }
 
-const mapStateToProps = state => state;
-
-export default connect(mapStateToProps)(App);
+export default App;

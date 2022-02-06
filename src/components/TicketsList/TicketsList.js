@@ -1,21 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import TicketCard from '../TicketCard/TicketCard';
 import { filterTickets, sortTickets } from '../../utils';
+import { connect } from 'react-redux';
+import * as actions from '../../redux/actions';
+import Loader from '../Loader/Loader';
 
-const prepareTickets = (tickets, transfersQuantities, visibilityFilter) => {
-    const filteredTickets = filterTickets(tickets, transfersQuantities);
-    return sortTickets(filteredTickets, visibilityFilter);
-};
+class TicketsList extends Component {
 
-function TicketsList ({ tickets, transfersQuantities, visibilityFilter }) {
+    async componentDidMount() {
+        await this.props.dispatch(actions.obtainTickets());
+    }
 
-    const preparedTickets = prepareTickets(tickets, transfersQuantities, visibilityFilter).slice(0,5);
+    render() {
+        
+        const { tickets, transfersQuantities, visibilityFilter, loadingCompleted } = this.props;
 
-    return (
-        <>
-            {preparedTickets.map((ticket, index) => (<TicketCard ticket={ticket} key={index} />))}
-        </>
-    )
+        const prepareTickets = (tickets, transfersQuantities, visibilityFilter) => {
+            const filteredTickets = filterTickets(tickets, transfersQuantities);
+            return sortTickets(filteredTickets, visibilityFilter);
+        };
+
+        const preparedTickets = prepareTickets(tickets, transfersQuantities, visibilityFilter).slice(0,5);
+    
+        return (
+            
+            <>
+                <Loader visible = { !loadingCompleted } />
+                {preparedTickets.map((ticket, index) => (<TicketCard ticket={ticket} key={index} />))}
+            </>
+        )
+    }
 }
 
-export default TicketsList;
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps)(TicketsList);
